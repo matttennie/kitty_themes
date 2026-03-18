@@ -259,8 +259,6 @@ def cmd_cycle(_args):
                 CURRENT_THEME.write_text(content, "utf-8")
                 if fav.get("starship_config"):
                     STARSHIP_CONF.write_text(fav["starship_config"], "utf-8")
-                else:
-                    write_starship(fav)
                 subprocess.run(
                     ["kitty", "@", "set-colors", "--all", "--configured", str(CURRENT_THEME)],
                     capture_output=True, timeout=3,
